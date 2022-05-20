@@ -1,0 +1,13 @@
+// PRODUCTS ACTIONS
+export const GET_PRODUCTS_SUCCECESS = 'GET_PRODUCTS_SUCCECESS'
+export const GET_PRODUCTS_ENDPOINT = 'products'
+export const LOGOUT = 'LOGOUT'
+
+// CART ACTIONS
+export const ADD_TO_CART = 'ADD_TO_CART'
+export const REMOVE_FROM_CART = 'REMOVE_FROM_CART'
+export const ADD_QUANTITY = 'ADD_QUANTITY'
+export const SUB_QUANTITY = 'SUB_QUANTITY'
+
+export const LOADING = 'LOADING'
+export const ERROR = 'ERROR'
