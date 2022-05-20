@@ -1,5 +1,13 @@
 import React from 'react'
-import { Modal, View, Text, TouchableOpacity, Image, StatusBar } from 'react-native'
+import {
+  Modal,
+  View,
+  Text,
+  TouchableOpacity,
+  Image,
+  StatusBar,
+  ImageSourcePropType,
+} from 'react-native'
 
 import { GRAY_38 } from '../../utils/colors'
 
@@ -7,7 +15,7 @@ import styles from './styles'
 
 export type ModalProps = {
   modalVisibility: boolean
-  icon: number
+  icon: ImageSourcePropType
   title: string
   message: string
   mainButtonText: string
@@ -34,10 +42,18 @@ const ModalComponent: React.FC<ModalProps> = ({
           <Image source={icon} />
           <Text style={styles.title}>{title}</Text>
           <Text style={styles.message}>{message}</Text>
-          <TouchableOpacity style={styles.button} onPress={onMainPress}>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={onMainPress}
+            testID="test-primary-button"
+          >
             <Text style={styles.buttonText}>{mainButtonText}</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.button} onPress={onSecondaryPress}>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={onSecondaryPress}
+            testID="test-secondary-button"
+          >
             <Text style={styles.buttonText}>{secondaryButtonText}</Text>
           </TouchableOpacity>
         </View>

@@ -223,6 +223,12 @@ android {
         }
     }
     signingConfigs {
+        release {
+            storeFile file('ton_shop.keystore')
+            storePassword '123456'
+            keyAlias 'your_key_alias'
+            keyPassword 'your_key_file_alias_password'
+        }
         debug {
             storeFile file('debug.keystore')
             storePassword 'android'
@@ -240,6 +246,7 @@ android {
             signingConfig signingConfigs.debug
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+            signingConfig signingConfigs.release
         }
     }
 
